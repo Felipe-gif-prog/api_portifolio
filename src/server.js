@@ -10,9 +10,7 @@ app.use("/portifolio", projetos)
 app.use("/email", email)
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => {
-        console.log(`Servidor rodando em http://localhost:${PORT}`);
-    });
+    app.listen(PORT, () => {});
 }).catch(err => {
     console.error('Erro ao sincronizar o banco de dados:', err);
 });
