@@ -34,5 +34,4 @@ router.post("/enviar", (req, res) => {
     })
 })
 
-// kamilabier487@gmail.com
 export default router
