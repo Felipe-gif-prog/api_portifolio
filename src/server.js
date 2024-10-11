@@ -9,6 +9,10 @@ app.use(express.json())
 app.use("/portifolio", projetos)
 app.use("/email", email)
 
+app.get("/", (req, res) => {
+    res.send("Minha api de portifólio")
+})
+
 sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => {});
 }).catch(err => {
