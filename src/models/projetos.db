@@ -1,0 +1,11 @@
+CREATE TABLE projetos(id INT AUTO_INCREMENT PRIMARY KEY,nome VARCHAR(100),imagem VARCHAR(255),url_projeto VARCHAR(255));
+
+INSERT INTO projetos (nome, imagem, url_projeto, createdAt, updatedAt) VALUES ('Cardapio Digital', 'https://i.postimg.cc/021qpNzc/Screenshot-19.png', 'https://digital-cardapio.vercel.app/', NOW(), NOW());
+
+INSERT INTO projetos (nome, imagem, url_projeto, createdAt, updatedAt) VALUES ('NutriBot', 'https://i.postimg.cc/2SzRKXFW/Screenshot-20.png', 'https://nutri-bot-site.vercel.app/', NOW(), NOW());
+
+INSERT INTO projetos (nome, imagem, url_projeto, createdAt, updatedAt) VALUES ('Outlet Sports', 'https://i.postimg.cc/HkBDD4Bh/Screenshot-23.png', 'https://outlet-sports.vercel.app/', NOW(), NOW());
+
+INSERT INTO projetos (nome, imagem, url_projeto, createdAt, updatedAt) VALUES ('Jujutsu kaisen page', 'https://i.postimg.cc/PrbnKkZh/Screenshot-22.png', 'https://pagina-jjk.vercel.app/', NOW(), NOW());
+
+INSERT INTO projetos (nome, imagem, url_projeto, createdAt, updatedAt) VALUES ('Costs projetos', 'https://i.postimg.cc/nLPyMV8K/Screenshot-28.png', 'http://costs-app-six.vercel.app', NOW(), NOW());
