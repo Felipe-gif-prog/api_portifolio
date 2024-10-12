@@ -4,7 +4,7 @@ import projetos from './routes/projetos.js'
 import email from './routes/email.js'
 import cors from 'cors'
 const app = express()
-const PORT = 8801
+const PORT = 3000
 
 app.use(express.json())
 app.use(cors())
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
 })
 
 sequelize.sync({ force: false }).then(() => {
-    app.listen(PORT, () => {});
+    app.listen(PORT, "0.0.0.0", () => {});
 }).catch(err => {
     console.error('Erro ao sincronizar o banco de dados:', err);
 });
