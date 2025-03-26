@@ -4,22 +4,10 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
-console.log('DB_HOST:', process.env.DB_HOST);
-console.log('DB_PORT:', process.env.DB_PORT);
-console.log('DB_NAME:', process.env.DB_NAME);
-console.log('DB_USER:', process.env.DB_USER);
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
-
-const sequelize = new Sequelize(
-    process.env.DB_NAME || '', 
-    process.env.DB_USER || '', 
-    process.env.DB_PASSWORD || '', 
-    {
-        host: process.env.DB_HOST || 'localhost', 
-        dialect: 'mysql', 
-        port: Number(process.env.DB_PORT) || 3306, 
-    }
-);
+const sequelize = new Sequelize(process.env.DATABASE_URL, {
+    dialect: "mysql",
+    logging: false, 
+});
 
 export const Projeto = sequelize.define('projetos', {
     nome: {
@@ -40,5 +28,11 @@ export const Projeto = sequelize.define('projetos', {
 });
 
 sequelize.sync({ force: false, alter: false  })
+.then(() => {
+    console.log('Banco sincronizado!')
+})
+.catch((err) => {
+    console.log('Erro ao syncronizar', err)
+})
 
 export default sequelize;
